@@ -1,38 +1,680 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Varela&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Pixels&family=Sedgwick+Ave+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&family=Rubik+Pixels&family=Signika:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Reem+Kufi+Fun:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#cbccc8)) fixed; */
+}
+/* body {
+  background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);
+} */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d3cece;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c0c0c0;
+}
+
+.background-radial-gradient {
+  background-color: hsl(218, 41%, 15%);
+  background-image: radial-gradient(
+      650px circle at 0% 0%,
+      hsl(218, 41%, 35%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1250px circle at 100% 100%,
+      hsl(218, 41%, 45%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%
+    );
+}
+
+#radius-shape-1 {
+  height: 220px;
+  width: 220px;
+  top: -60px;
+  left: -130px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+
+#radius-shape-2 {
+  border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+  bottom: -60px;
+  right: -110px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+
+.bg-glass {
+  background-color: hsla(0, 0%, 100%, 0.9) !important;
+  backdrop-filter: saturate(200%) blur(25px);
+}
+
+.hidden-text {
+  overflow: hidden;
+  white-space: nowrap;
+  padding-inline-end: auto;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  font-size: 1.7rem;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #333333; */
+}
+
+.li {
+  float: left;
+}
+
+.li div {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 1rem;
+  text-decoration: none;
+}
+
+.li div:hover {
+  color: rgb(206, 9, 9);
+
+  /* transform: scale(0.9); */
+  /* transition: all 0.s ease-in-out; */
+}
+.active-a {
+  transition: all 1s ease-in-out;
+  color: rgb(62, 9, 185);
+  font-weight: bold;
+}
+
+.card > img:after {
+  scale: 110%;
+}
+
+.cast-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.pt1 {
+  background-size: 50px 50px;
+  background-color: #0ae;
+  background-image: -webkit-linear-gradient(
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 50%,
+    transparent
+  );
+  background-image: -moz-linear-gradient(
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 50%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 50%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 50%,
+    transparent
+  );
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 50%,
+    transparent
+  );
+}
+
+.jumbotron.text-center {
+  height: 17em;
+}
+
+input.form-control.col-md-6 {
+  width: 50%;
+  margin-right: 1em;
+  display: inline;
+}
+
+div#notes {
+  margin-top: 2%;
+  width: 98%;
+  margin-left: 1%;
+}
+
+@media (min-width: 991px) {
+  .col-md-9.col-sm-12 {
+    margin-left: 12%;
+  }
+}
+
+.rounded-t-5 {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.card-dropdown button :hover {
+  background-color: rgb(105, 102, 102) !important;
+}
+
+h1 {
+  font-family: "Varela", sans-serif !important;
+  font-weight: bold !important;
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+}
+
+.card-2:hover {
+  transform: scale(0.9);
+  transition: all 0.3s ease-out;
+}
+
+.display-nav {
+  display: none !important ;
+}
+
+/*** Back To Top***/
+
+#btn-back-to-top {
+  position: fixed;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  background: #331147;
+  bottom: 10%;
+  right: 25px;
+  opacity: 0.8;
+  z-index: 1000;
+  scroll-behavior: smooth;
+}
+
+/*********************/
+
+/* ******Movies Details****** */
+
+.main-container {
+  padding: 2.5rem;
+  margin-top: 3rem;
+}
+
+.detail-cont {
+  display: flex;
+  flex-direction: row;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.detail-img {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-right: 4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.info-about {
+  text-align: left !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.about {
+  display: flex !important;
+  align-items: center;
+}
+
+.sepraters {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.icon-row {
+  display: flex;
+}
+
+.icons {
+  display: flex;
+  margin-right: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(6, 6, 61);
+}
+
+.outer-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.inner-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  width: 2.6rem;
+  height: 2.6rem;
+  background-color: #210350;
+  border-radius: 50%;
+}
+
+.bg-color {
+  background-color: rgb(29, 24, 24) !important;
+}
+
+.overview {
+  width: 80%;
+}
+
+.minner-details {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.minner-details-cont {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 0.7rem;
+  flex-direction: column;
+  box-shadow: -15px 10px 10px rgba(255, 255, 255, 0.7);
+}
+
+.backdrops {
+  height: 300px;
+  width: 420px;
+  box-shadow: rgba(209, 230, 248, 0.4) 0px 0px 0px 2px,
+    rgba(209, 230, 248, 0.65) 0px 4px 6px -1px,
+    rgba(209, 230, 248, 0.8) 0px 1px 0px inset;
+}
+
+.backdrops-img {
+  height: 300px;
+  width: 420px;
+}
+
+/* *********** */
+
+/*** tv details***/
+
+.sec-cont {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.cast-list-cont {
+  min-width: 82%;
+  max-width: 82%;
+}
+
+.card-season {
+  display: flex;
+  height: 250px;
+  width: 100%;
+  flex-direction: row;
+}
+
+.card-season-img {
+  width: 20%;
+  height: 100%;
+}
+
+.card-details {
+  width: 80%;
+  height: 250px;
+}
+
+.hover-effect:hover {
+  color: #03ce0d;
+}
+
+.networks-cont {
+  height: 5rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.network-cont-img {
+  display: flex;
+  width: auto;
+  margin-top: 10px;
+  /* height:auto; */
+  flex-direction: column;
+}
+
+/******************/
+
+.option-choose {
+  display: flex;
+  align-items: center;
+}
+
+/*****People details*****/
+
+.people-cont {
+  display: flex;
+  width: 100vw;
+  margin-top: 5rem;
+  height: auto;
+}
+.people-img-cont {
+  padding: 3rem;
+}
+.people-img-cont img {
+  width: 250px;
+  height: 350px;
+  box-shadow: -10px -10px rgb(66, 62, 62);
+}
+.people-detail-cont {
+  padding-left: 50px;
+}
+
+/************************/
+
+/********* search *********/
+
+.search-cont {
   display: flex;
   flex-direction: column;
+}
+
+.search-options {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #ad1fff;
+  font-weight: bolder;
 }
 
-.App-link {
-  color: #61dafb;
+.search-cont .active {
+  color: #ececec;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/******************/
+.seasons-card {
+  height: 190px;
+  display: flex;
+}
+.seasons-img-cont {
+  flex-direction: row;
+  width: 10%;
+  height: 190px;
+}
+.season-img {
+  flex-direction: row;
+  display: flex;
+  width: 25%;
+}
+.season-img img {
+  border-radius: 10px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;}
+.season-img-cont {
+  width: 10%;
+  height: 200px;
+  position: absolute;
+  top: 10%;
+  left: 20;
+}
+.seasons-img-cont img {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.season-img-cont img {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.season-details {
+  margin-left: 1rem;
+}
+
+.seasons-card-details {
+  width: 90%;
+  margin-left: 3rem;
+}
+
+.season-title {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+
+/******************/
+
+@media (max-width: 425px) {
+  .rounded-tr-lg-0 {
+    border-top-right-radius: 0;
   }
-  to {
-    transform: rotate(360deg);
+  #row-mobile {
+    height: 90% !important;
+  }
+
+  .option-choose {
+    display: block;
+  }
+
+  .rounded-bl-lg-5 {
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  /* Movies Details Component */
+
+  .main-cont {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .detail-cont {
+    display: block;
+  }
+
+  .icon-row {
+    display: flex;
+    justify-content: center;
+  }
+  .info-about {
+    text-align: center !important;
+    margin-top: 1rem;
+    /* display: block; */
+  }
+
+  .title {
+    display: flex;
+    font-size: 50px !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about {
+    width: 100%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+  }
+
+  .detail-img {
+    justify-content: center !important;
+    margin-right: 0;
+    padding-bottom: 5px;
+  }
+
+  .detail-img img {
+    height: 250px !important;
+    width: 180px !important;
+  }
+
+  .overview {
+    width: 100%;
+    padding-top: 5px;
+  }
+  .minner-details-cont {
+    padding-left: 0;
+    padding-top: 50px;
+  }
+  .minner-details {
+    font-size: 15px;
+  }
+  .minner-details-p {
+    font-size: 10px;
+  }
+
+  .backdrops {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  }
+
+  .backdrops {
+    height: 250px;
+    width: 300px;
+    box-shadow: rgba(209, 230, 248, 0.4) 0px 0px 0px 2px,
+      rgba(209, 230, 248, 0.65) 0px 4px 6px -1px,
+      rgba(209, 230, 248, 0.8) 0px 1px 0px inset;
+  }
+
+  .backdrops-img {
+    height: 250px;
+    width: 300px;
+  }
+
+  /**********/
+
+  /***** tv details ******/
+
+  .card-season {
+    display: block;
+  }
+
+  .card-details {
+    width: 100%;
+    color: white;
+    height: 250px;
+    position: absolute;
+    background-color: rgba(12, 11, 11, 0.65);
+  }
+  .movie-minner-details {
+    padding-top: 10px;
+  }
+
+  .card-season-img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sec-cont {
+    display: block;
+  }
+
+  .cast-list-cont {
+    min-width: 100%;
+  }
+
+  /*************/
+
+  .seasons-img-cont {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 200px;
+  }
+
+  .season-img-cont {
+    width: 30%;
+    height: 200px;
+    position: absolute;
+    top: 10%;
+    left: 20px;
+  }
+  .season-img {
+    width: 100%;
+    position: absolute;
+    height: 200px;
+  }
+  .season-img img {
+    border-radius: 0;
+  }
+
+  .season-title {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+  }
+
+  .seasons-img-cont img {
+    border-radius: 0;
+  }
+
+  .seasons-card {
+    display: block;
+    height: 200px;
+    width: 100%;
+  }
+
+  .seasons-card-details {
+    width: 100%;
+    color: white;
+    margin: 0;
+    height: 200px;
+    position: absolute;
+    background-color: rgba(12, 11, 11, 0.65);
+  }
+
+  .season-details {
+    margin: 1rem;
+  }
+
+  /* /////////////// */
+  /****People deatils*********/
+  .people-cont {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .people-img-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  .people-detail-cont {
+    padding-left: 20px;
   }
 }
+
+/* loading */
