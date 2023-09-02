@@ -28,10 +28,7 @@ export default function ForVerify() {
   };
   return (
     <div>
-      <div
-        className="container d-flex justify-content-center mt-5"
-        style={{ width: "40%" }}
-      >
+      <div className="container cont-forverify d-flex justify-content-center mt-5">
         <div className="card">
           <div
             className="bg-dark d-flex justify-content-center align-items-center mt-3"

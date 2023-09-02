@@ -471,6 +471,9 @@ h1 {
   top: 10%;
   left: 20%;
 }
+.cont-forverify{
+  width: 40%;
+}
 
 /******************/
 
@@ -569,6 +572,10 @@ h1 {
   .backdrops-img {
     height: 250px;
     width: 300px;
+  }
+
+  .cont-forverify{
+    width: 90%;
   }
 
   /**********/
