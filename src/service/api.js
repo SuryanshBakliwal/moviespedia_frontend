@@ -52,6 +52,15 @@ export const verifyEmail = async ({ id, token }) => {
   return data;
 };
 
+export const forVerify = async ({ email }) => {
+  const data = await axios.post(
+    "https://moviespediabackend.onrender.com/forverify",
+    { email }
+  );
+  console.log(data);
+  return data;
+};
+
 export const addFavroites = async ({ email, movie }) => {
   const response = await axios.post(
     "https://moviespediabackend.onrender.com/addfavroites",

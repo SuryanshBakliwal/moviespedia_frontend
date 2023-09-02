@@ -27,11 +27,14 @@ export default function Login() {
     if (!response.data.message) {
       alert("Enter Valid Crentails");
     }
-    if (response.data.message && response.data.userId) {
-      localStorage.setItem("authToken", response.data.authToken);
-      localStorage.setItem("mailId", loginInfo.email);
-      console.log(response.data.userId);
-      navigate("/home");
+    if (response.data.message) {
+      if (response.data.isVerified) {
+        localStorage.setItem("authToken", response.data.authToken);
+        localStorage.setItem("mailId", loginInfo.email);
+        navigate("/home");
+      } else {
+        navigate("/verify");
+      }
     }
   };
 
@@ -93,7 +96,7 @@ export default function Login() {
                     </div>
 
                     <p className="small mb-5 pb-lg-2">
-                      <Link className="text-muted" to='/forgotpassword'>
+                      <Link className="text-muted" to="/forgotpassword">
                         Forgot password?
                       </Link>
                     </p>

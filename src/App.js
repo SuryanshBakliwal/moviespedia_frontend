@@ -20,6 +20,7 @@ import WatchList from "./screens/profile/WatchList";
 import AllSeasons from "./screens/tvshows/AllSeasons";
 import Season from "./screens/tvshows/Season";
 import EpisodeDetails from "./screens/tvshows/EpisodeDetails";
+import ForVerify from "./screens/home/auth/ForVerify";
 // import Main from "./screens/Main";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route exact path="/search" element={<Search />} />
           <Route exact path="/tvshow/details/" element={<Season />} />
           <Route exact path="/show/details/" element={<EpisodeDetails />} />
+          <Route exact path="/verify" element={<ForVerify />} />
 
           <Route exact path="/forgotpassword" element={<ForgotPassword />} />
           <Route exact path="/user/watchlist" element={<WatchList />} />
