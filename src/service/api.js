@@ -108,3 +108,15 @@ export const getWatchList = async ({ email }) => {
   console.log(response);
   return response;
 };
+
+export const isUserExistInDB = async ( {email} ) => {
+  console.log(email);
+  const response = await axios.post(
+    "https://moviespediabackend.onrender.com/isexist",
+    {
+      email,
+    }
+  );
+  console.log(response);
+  return response;
+};

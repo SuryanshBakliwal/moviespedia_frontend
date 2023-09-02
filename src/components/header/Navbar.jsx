@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { isUserExistInDB } from "../../service/api";
 
 export default function Navbar({ set }) {
   const navigate = useNavigate();
   const [fixedNav, setFixedNav] = useState(true);
+  const [isUserExist, setUserExist] = useState(false);
+  const [email, setEmail] = useState("");
 
   const handleLogOut = () => {
     localStorage.clear();
@@ -11,6 +14,9 @@ export default function Navbar({ set }) {
   };
 
   useEffect(() => {
+    if (localStorage.getItem("authToken")) {
+      setEmail(localStorage.getItem("mailId"));
+    }
     window.addEventListener("scroll", () => {
       if (window.scrollY <= 400) {
         setFixedNav(true);
@@ -18,7 +24,23 @@ export default function Navbar({ set }) {
         setFixedNav(false);
       }
     });
-  });
+    console.log(email);
+    const loadData = async () => {
+      const res = await isUserExistInDB({ email });
+      console.log(res);
+      if (res) {
+        if (res.data.flag) {
+          setUserExist(true);
+        } else {
+          setUserExist(false);
+          localStorage.clear();
+        }
+      }
+    };
+    if (email) {
+      loadData();
+    }
+  }, [email]);
 
   const handleNavigateMovies = (item) => {
     navigate("/movies?sort=" + item);
@@ -180,7 +202,7 @@ export default function Navbar({ set }) {
                   </li>
                 </ul>
               </li>
-              {!localStorage.getItem("authToken") ? (
+              {!isUserExist ? (
                 <>
                   <li className="nav-item pt-1 ">
                     <Link className="text-white   nav-link" to="/login">
